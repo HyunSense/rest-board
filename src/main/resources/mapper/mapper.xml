@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rest.board.account.repository.mybatis.UserMapper">
+
+    <select id="findAll" resultType="User">
+        select
+            id, login_id, password, name, email, created_date, login_date
+        from user
+    </select>
+
+    <select id="findById" resultType="User" parameterType="java.lang.Long">
+        select
+            id, login_id, password, name, email, created_date, login_date
+        from user where id = #{id}
+    </select>
+
+</mapper>
